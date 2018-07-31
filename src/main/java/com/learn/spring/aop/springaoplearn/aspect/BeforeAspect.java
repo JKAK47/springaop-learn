@@ -16,10 +16,15 @@ public class BeforeAspect {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    //Aspect = Pointcut + Advice
+
+    //Weaving & Weaver
     //execution(* PACKAGE.*.*(..))
-    @Before("execution(* com.learn.spring.aop.springaoplearn.business.BusinessImpl.*.*(..))")
+
+    @Before("execution(* com.learn.spring.aop.springaoplearn.business.*.*(..))") //Pointcut
     public void before(JoinPoint joinPoint) {
-        logger.info("Intercepted a method call - {}", joinPoint );
+        //Advice
+        logger.info("Intercepted a method call - {}", joinPoint);
     }
 
 }
