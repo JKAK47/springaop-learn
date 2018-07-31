@@ -20,19 +20,19 @@ public class AfterAspect {
     //Weaving & Weaver
     //execution(* PACKAGE.*.*(..))
 
-    @AfterReturning(value="execution(* com.learn.spring.aop.springaoplearn.business.*.*(..))", returning="result")
+    @AfterReturning(value="com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.businessLayerExecution()", returning="result")
     public void afterReturning(JoinPoint joinPoint, Object result) {
         //Advice
         logger.info("{} returned with the value - {}", joinPoint, result);
     }
 
-    @AfterThrowing(value="execution(* com.learn.spring.aop.springaoplearn.business.*.*(..))", throwing="exception")
+    @AfterThrowing(value="com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.businessLayerExecution()", throwing="exception")
     public void afterThrowing(JoinPoint joinPoint, Exception exception) {
         //Advice
         logger.info("{} throw exception - {}", joinPoint, exception);
     }
 
-    @After(value="execution(* com.learn.spring.aop.springaoplearn.business.*.*(..))")
+    @After(value="com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void after(JoinPoint joinPoint) {
         //Advice
         logger.info("After execution of {}", joinPoint);

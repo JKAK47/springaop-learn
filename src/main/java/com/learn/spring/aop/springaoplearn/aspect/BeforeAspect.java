@@ -21,7 +21,7 @@ public class BeforeAspect {
     //Weaving & Weaver
     //execution(* PACKAGE.*.*(..))
 
-    @Before("execution(* com.learn.spring.aop.springaoplearn.business.*.*(..))") //Pointcut
+    @Before("com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.dataLayerExecution()") //Pointcut
     public void before(JoinPoint joinPoint) {
         //Advice
         logger.info("Intercepted a method call - {}", joinPoint);

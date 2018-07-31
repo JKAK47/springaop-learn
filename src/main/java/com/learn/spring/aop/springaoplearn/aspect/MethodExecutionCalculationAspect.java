@@ -21,7 +21,7 @@ public class MethodExecutionCalculationAspect {
     //Weaving & Weaver
     //execution(* PACKAGE.*.*(..))
 
-    @Around("execution(* com.learn.spring.aop.springaoplearn.business.*.*(..))")
+    @Around("com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.businessLayerExecution()")
     public void around(ProceedingJoinPoint joinPoint) throws Throwable {
         //Advice
 
