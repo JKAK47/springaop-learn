@@ -15,4 +15,23 @@ public class CommonJoinPointConfig {
     public void businessLayerExecution() {
 
     }
+
+    @Pointcut("com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.businessLayerExecution() && com.learn.spring.aop.springaoplearn.aspect.CommonJoinPointConfig.dataLayerExecution()")
+    public void allLayersExecution() {
+
+    }
+
+    @Pointcut("bean(*dao*)")
+    public void beanContainingDao() {
+
+    }
+
+    @Pointcut("within(com.learn.spring.aop.springaoplearn.data..*)")
+    public void dataLayerExecutionWithin() {
+
+    }
+
+    @Pointcut("@annotation(com.learn.spring.aop.springaoplearn.aspect.TrackTime)")
+    public void trackAnnotation() {}
+
 }

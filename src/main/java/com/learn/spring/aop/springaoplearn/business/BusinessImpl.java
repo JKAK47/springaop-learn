@@ -1,5 +1,6 @@
 package com.learn.spring.aop.springaoplearn.business;
 
+import com.learn.spring.aop.springaoplearn.aspect.TrackTime;
 import com.learn.spring.aop.springaoplearn.data.DAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ public class BusinessImpl {
     @Autowired
     private DAO dao;
 
+    @TrackTime
     public String calculate() {
         return dao.getData();
     }

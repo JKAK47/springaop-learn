@@ -1,5 +1,6 @@
 package com.learn.spring.aop.springaoplearn.data;
 
+import com.learn.spring.aop.springaoplearn.aspect.TrackTime;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class DAO {
+    @TrackTime
     public String getData() {
         return "Retrieve Data";
     }
